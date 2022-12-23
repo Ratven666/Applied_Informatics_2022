@@ -1,0 +1,15 @@
+
+ALTER TABLE points ADD COLUMN isActiv INT;
+
+ALTER TABLE points ADD COLUMN isActiv2 BOOLEAN DEFAULT TRUE;
+
+UPDATE points SET isActiv = 0 WHERE id = 28;
+
+SELECT id FROM points ORDER BY Z LIMIT 5;
+
+UPDATE points SET isActiv = 0 WHERE id IN (SELECT id FROM points ORDER BY Z LIMIT 5);
+
+ALTER TABLE points DROP COLUMN isActiv2;
+
+DROP TABLE points;
+
